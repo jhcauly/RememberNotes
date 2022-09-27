@@ -5,25 +5,18 @@ const util = require('util');
 
 // Promise version of fs.readFile
 function readFromFile(content, file) {
-  /* const index = require('../public/assets/js/index.js'); */
-  console.log("teste1")
-  var removed ="";
-  var updateFile="";
     const content1 = fs.readFileSync(file, 'utf-8')
     const currentContent = JSON.parse(content1);
         for (let i = 0; i < currentContent.length; i++) {
           if (currentContent[i].notes_id === content) {
-            removed = currentContent.splice(i, 1);
-            updateFile = JSON.stringify(currentContent)
+           let removed = currentContent.splice(i, 1);
+           let updateFile = JSON.stringify(currentContent)
             fs.writeFileSync(file, updateFile, 'utf-8')
-            Tet();
+       
             }
           }
         
 };
-function Tet(){
-  console.log("teste")
-}
 const writeToFile = (destination, content) =>
   fs.writeFile(destination, JSON.stringify(content, null, 4), (err) =>
     err ? console.error(err) : console.info(`\nData written to ${destination}`)

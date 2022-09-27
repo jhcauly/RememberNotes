@@ -41,13 +41,43 @@ const saveNote = (note) =>
     },
     body: JSON.stringify(note),
   })
-    .then((data) => {
-      alert(data);
-      getAndRenderNotes(data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+  .then((response) => response.json())
+  .then((data) => {
+    alert(data);
+    getAndRenderNotes();
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+
+
+    const createLi = (node) => {
+      const liEl = document.createElement('li');
+      liEl.classList.add('list-group-item');
+  
+      const spanEl = document.createElement('span');
+      spanEl.classList.add('list-item-title');
+      spanEl.innerText = node.title;
+      spanEl.addEventListener('click', handleNoteView);
+  
+      liEl.append(spanEl);
+  
+      if (delBtn) {
+        const delBtnEl = document.createElement('i');
+        delBtnEl.classList.add(
+          'fas',
+          'fa-trash-alt',
+          'float-right',
+          'text-danger',
+          'delete-note'
+        );
+        delBtnEl.addEventListener('click', handleNoteDelete);
+  
+        liEl.append(delBtnEl);
+      }
+  
+      return liEl;
+    };
 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
@@ -58,7 +88,7 @@ const deleteNote = (id) =>
     
   }) .then((data) => {
     alert(data);
-    getAndRenderNotes(data);
+    getAndRenderNotes();
   })
   .catch((error) => {
     console.error('Error:', error);
@@ -175,9 +205,18 @@ const renderNoteList = async (notes,aux) => {
 
     return liEl;
   };
-
   if (jsonNotes.length === 0) {
-    noteListItems.push(createLi('No saved Notes', false));
+/*     noteListItems.push(createLi('No saved Notes', false)); */
+const liEl = document.createElement('li');
+    liEl.classList.add('list-group-item');
+
+    const spanEl = document.createElement('span');
+    spanEl.classList.add('list-item-title');
+    spanEl.innerText = "No saved Notes";
+    spanEl.addEventListener('click', handleNoteView);
+
+    liEl.append(spanEl);
+    noteListItems.push(liEl);
   }
 
   jsonNotes.forEach((notes) => {
