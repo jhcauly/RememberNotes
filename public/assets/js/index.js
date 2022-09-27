@@ -43,7 +43,7 @@ const saveNote = (note) =>
   })
     .then((data) => {
       alert(data);
-      getAndRenderNotes();
+      getAndRenderNotes(data);
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -54,13 +54,15 @@ const deleteNote = (id) =>
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
-      
     },
     
-  }) .then(() => {
-    console.log("aqui")
-  
+  }) .then((data) => {
+    alert(data);
+    getAndRenderNotes(data);
   })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
   
 
 
@@ -132,10 +134,13 @@ const handleRenderSaveBtn = () => {
 };
 
 // Render the list of note titles
-const renderNoteList = async (notes) => {
-  console.log(notes)
+const renderNoteList = async (notes,aux) => {
+  
+  
   let jsonNotes = await notes.json();
  
+ 
+ console.log(jsonNotes)
   if (window.location.pathname === '/notes.html') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
@@ -175,9 +180,9 @@ const renderNoteList = async (notes) => {
     noteListItems.push(createLi('No saved Notes', false));
   }
 
-  jsonNotes.forEach((note) => {
-    const li = createLi(note);
-    li.dataset.note = JSON.stringify(note);
+  jsonNotes.forEach((notes) => {
+    const li = createLi(notes);
+    li.dataset.note = JSON.stringify(notes);
 
     noteListItems.push(li);
   });

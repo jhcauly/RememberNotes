@@ -1,20 +1,29 @@
 const { json } = require('express');
 const fs = require('fs');
 const util = require('util');
+/* const index = require('../public/assets/js/index.js') */
 
 // Promise version of fs.readFile
-const readFromFile = (content, file) => {
+function readFromFile(content, file) {
+  /* const index = require('../public/assets/js/index.js'); */
+  console.log("teste1")
+  var removed ="";
+  var updateFile="";
     const content1 = fs.readFileSync(file, 'utf-8')
     const currentContent = JSON.parse(content1);
         for (let i = 0; i < currentContent.length; i++) {
           if (currentContent[i].notes_id === content) {
-            const removed = currentContent.splice(i, 1);
-            const updateFile = JSON.stringify(currentContent)
+            removed = currentContent.splice(i, 1);
+            updateFile = JSON.stringify(currentContent)
             fs.writeFileSync(file, updateFile, 'utf-8')
+            Tet();
             }
           }
+        
 };
-
+function Tet(){
+  console.log("teste")
+}
 const writeToFile = (destination, content) =>
   fs.writeFile(destination, JSON.stringify(content, null, 4), (err) =>
     err ? console.error(err) : console.info(`\nData written to ${destination}`)

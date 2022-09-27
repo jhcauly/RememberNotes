@@ -20,6 +20,7 @@ app.get('/', (req, res) => {
 
 app.get('/api/notes', (req, res) => res.json(notData));
 app.post('/api/notes', (req, res) => {
+ 
 /*   console.log(res) */
   // Log that a POST request was received
 /*   console.info(`${req.method} request received to add a review`); */
@@ -48,8 +49,10 @@ app.post('/api/notes', (req, res) => {
   }
 });
 app.delete("/api/notes/:id", (req, res) => {
+ 
   let chosenNoteToDelete = req.params.id;
   readFromFile(chosenNoteToDelete, './db/db.json');
+  res.status(201).json(response);
 });
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);
