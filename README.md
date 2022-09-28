@@ -24,3 +24,7 @@ This project is intended to save all notes the user wishes to remember and delet
 ### Links of Project:
 |Description: This website working -->
 https://warm-garden-86788.herokuapp.com/ |
+### Video of Project:
+|Description: Video of website working -->
+https://drive.google.com/file/d/1ZNGySyW14FSCWfLnAcy-3n-PnTL30DBg/view |
+
