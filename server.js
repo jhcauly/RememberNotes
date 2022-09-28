@@ -49,7 +49,6 @@ app.post('/api/notes', (req, res) => {
   }
 });
 app.delete("/api/notes/:id", (req, res) => {
- 
   let chosenNoteToDelete = req.params.id;
   readFromFile(chosenNoteToDelete, './db/db.json');
   res.status(201).json(response);

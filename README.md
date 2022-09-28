@@ -1,30 +1,26 @@
-# Employee_List
+# RememberNotes
 
 ### Project created by:
 - Trevizan, José Henrique
 
 ### General objective: 
 
-The purpose of this project is to demonstrate how all employees have been integrated into the organization.
+This project is intended to save all notes the user wishes to remember and delete them when no longer necessary.
 
 ### Printscreen of Project:
 
 | **Web Page** |
 | :---: |
-| <img src="https://github.com/jhcauly/EmployeeList/blob/main/img/managerinsert.png?raw=true" width="600"> |
-|Description: As can be seen in this picture, when we begin the program and ask the same questions, we will be asked if we wish to create more employees.!|
-| <img src="https://github.com/jhcauly/EmployeeList/blob/main/img/enginnerteste.png?raw=true" width="600"> |
-|Description: As can be seen in this picture, when selecting Engineer, the same questions will be asked to new Employees.! |
-| <img src="https://github.com/jhcauly/EmployeeList/blob/main/img/internteste.png?raw=true" width="600"> |
-|Description: As can be seen in this picture, when selecting Interns, the same questions will be asked to new Employees.! |
-| <img src="https://github.com/jhcauly/EmployeeList/blob/main/img/select.png?raw=true" width="600"> |
-|Description: This picture illustrates that when you have finished creating the employee, you can choose Finish to create the HTML for all employees.! |
-| <img src="https://github.com/jhcauly/EmployeeList/blob/main/img/index.html.png?raw=true" width="600"> |
-|Description: This picture illustrates the webpage with all the employees.! |
+| <img src="https://github.com/jhcauly/RememberNotes/blob/main/public/assets/img/first%20screen.png?raw=true" width="600"> |
+|Description: As can be seen in this picture, when we run the program and select that button at the top, we can insert both a title and a text all at the same time.!|
+| <img src="https://github.com/jhcauly/RememberNotes/blob/main/public/assets/img/save.png?raw=true" width="600"> |
+|Description: If we want to delete the same notes, we simply need to click the trash icon. Alternatively, if we want to view the notes, we just need to click the title.! |
+| <img src="https://github.com/jhcauly/RememberNotes/blob/main/public/assets/img/delete.png?raw=true" width="600"> |
+|Description: The note will be deleted from the database when we delete it from the screen.! |
+| <img src="https://github.com/jhcauly/RememberNotes/blob/main/public/assets/img/show%20save%20screen.png?raw=true" width="600"> |
+|Description: Clicking on the title will display the title and the note text at the right side of the screen.! |
+
 
 ### Links of Project:
 |Description: This video show the program working -->
-https://drive.google.com/file/d/1D67MWBqAeEOxlzk3EIzIzkvT_iXk0i7R/view |
-### Links of Test:
-|Description: This video show the test working --> 
-https://drive.google.com/file/d/12Gjrwf8iINnIXQKfMi_OWpmP9d_z3Ofz/view |
+https://warm-garden-86788.herokuapp.com/ |
